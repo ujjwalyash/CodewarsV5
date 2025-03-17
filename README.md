@@ -22,6 +22,5 @@ CodewarsV5 is a project developed by the Web and Coding Club (WNCC) at IIT Bomba
     pip install pygame pandas
     ```
 
-### Usage
-go through docs to get more overview
+
 
