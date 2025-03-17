@@ -3,13 +3,6 @@
 ## Description
 CodewarsV5 is a project developed by the Web and Coding Club (WNCC) at IIT Bombay. This repository contains code challenges and solutions to help improve your coding skills.
 
-## Features
-- Multiple coding challenges in Python
-- Solutions to the challenges
-- Detailed explanations and comments
-
-## Getting Started
-
 ### Prerequisites
 - Python 3.x
 
