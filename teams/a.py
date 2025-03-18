@@ -53,7 +53,7 @@ def logic(arena_data: dict):
         current_names = [name.strip() for name in team_signal.split(",")] if team_signal else []
         if troop.name not in current_names:
             team_signal = team_signal + ", " + troop.name if team_signal else troop.name
-    # print(f"Team Signal: {team_signal}")
+    #print(f"Team Signal: {team_signal}")
     
     # --- Analyze Opponent's Deck Composition ---
     # Define opponent categories.

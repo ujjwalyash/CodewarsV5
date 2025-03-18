@@ -1,5 +1,5 @@
-from teams import a,b
+from teams import a,gen_NN
 
 TEAM1 = a
-TEAM2 = b
+TEAM2 = gen_NN
 VALUE_ERROR = False

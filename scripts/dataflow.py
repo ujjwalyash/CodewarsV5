@@ -56,6 +56,9 @@ class DataFlow:
             else:
                 dummy_troop.target = None
 
+        #####################################################################################
+        ### Arena Data
+        #####################################################################################
         self.data_provided1["MyTower"] = tower1
         self.data_provided1["OppTower"] = tower1_opp
         self.data_provided1["MyTroops"] = tower1_troops

@@ -23,8 +23,7 @@ class Game:
         self.shadow_screen = pygame.Surface((MIDDLE_WIDTH,MIDDLE_HEIGHT),pygame.SRCALPHA)
         self.left_screen = pygame.Surface(self.side_display_size)
         self.right_screen = pygame.Surface(self.side_display_size)
-        self.main_screen = pygame.display.set_mode((FULL_WIDTH,EXTRA_HEIGHT),pygame.RESIZABLE)
-
+        self.main_screen = pygame.display.set_mode((1000, FULL_HEIGHT*9/10),pygame.RESIZABLE) #(FULL_WIDTH,EXTRA_HEIGHT)
         self.fps = FPS
         self.clock = pygame.time.Clock()
         self.game_counter = 0

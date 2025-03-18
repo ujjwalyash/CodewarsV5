@@ -36,3 +36,7 @@ def logic(arena_data:dict):
     global team_signal
     deploy_list.list_.append((arena_data["MyTower"].deployable_troops[0],(-25,0)))
     deploy_list.list_.append((arena_data["MyTower"].deployable_troops[1],(25,0)))
+    print("                       ")
+    print("My troops", arena_data["MyTroops"])
+    # print("Opp troops", arena_data["OppTroops"])
+    print("                       ")
