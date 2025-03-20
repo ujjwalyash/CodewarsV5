@@ -45,6 +45,9 @@ class Decoration:
             text_surface = font2.render(self.message, True, (255,0,0))
             text_rect = text_surface.get_rect(center=(MIDDLE_WIDTH // 2 , MIDDLE_HEIGHT // 2 + (FULL_HEIGHT//24)))
             self.middle_screen.blit(text_surface, text_rect)
+        
+        print(self.winner)
+        quit()
 
     def check_game_end(self):
         if self.tower1.health <= 0 and self.tower2.health <= 0:

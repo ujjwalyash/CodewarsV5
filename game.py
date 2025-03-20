@@ -11,9 +11,9 @@ from scripts.game_config import *
 
 class Game:
     def __init__(self, troops1, troops2, team_name1, team_name2):
-        pygame.init()
-        pygame.font.init()
-        pygame.display.set_caption('Code Royale')
+        #pygame.init()
+        #pygame.font.init()
+        #pygame.display.set_caption('Code Royale')
 
         self.arena_display_size = (ARENA_WIDTH,ARENA_HEIGHT)
         self.side_display_size = ((FULL_WIDTH-MIDDLE_WIDTH)//2, FULL_HEIGHT)
@@ -23,8 +23,8 @@ class Game:
         self.shadow_screen = pygame.Surface((MIDDLE_WIDTH,MIDDLE_HEIGHT),pygame.SRCALPHA)
         self.left_screen = pygame.Surface(self.side_display_size)
         self.right_screen = pygame.Surface(self.side_display_size)
-        self.main_screen = pygame.display.set_mode((1000, FULL_HEIGHT*9/10),pygame.RESIZABLE) #(FULL_WIDTH,EXTRA_HEIGHT)
-        self.fps = FPS
+        self.main_screen = pygame.display.set_mode((200, 200),pygame.RESIZABLE) #()FULL_WIDTH,EXTRA_HEIGHT
+        self.fps = FPS*20
         self.clock = pygame.time.Clock()
         self.game_counter = 0
         self.winner = None
@@ -34,7 +34,7 @@ class Game:
         self.assets = load_assets()
         deploy_area = (0,self.arena_display_size[0],self.arena_display_size[1]/2,self.arena_display_size[1])
 
-        self.middle_map = Middle_Map(self.assets["middle_map"])
+        # self.middle_map = Middle_Map(self.assets["middle_map"])
         """
         NOTE
         TOWER 1's PERSPECTIVE IS GAME's PERSPECTIVE
@@ -57,7 +57,7 @@ class Game:
         self.data_provided2 = {}
     
     def render_game_screen(self):
-        self.middle_map.render(self.middle_screen)
+        # self.middle_map.render(self.middle_screen)
         
         self.screen.fill((0, 0, 0, 0)) # clear screen
         self.shadow_screen.fill((0, 0, 0, 0)) # clear screen
@@ -71,6 +71,7 @@ class Game:
             Decoration.entry_text(self)
         elif self.game_counter >= GAME_END_TIME:
             Decoration.outro_text(self)
+            
 
         self.main_screen.blit(self.middle_screen, ((FULL_WIDTH-MIDDLE_WIDTH)//2, 0))
         self.main_screen.blit(self.shadow_screen, ((FULL_WIDTH-MIDDLE_WIDTH)//2, 0))
@@ -90,17 +91,17 @@ class Game:
     def run(self):
         while True:
             self.render_game_screen()
-            self.render_left_screen()
-            self.render_right_screen()
+            # self.render_left_screen()
+            # self.render_right_screen()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_UP:
-                        self.fps = min(70,self.fps+5)
+                        self.fps = min(3000,self.fps+5)
                     if event.key == pygame.K_DOWN:
                         self.fps = max(5,self.fps - 5)
-            pygame.display.update()
+            # pygame.display.update()
             self.clock.tick(self.fps)
             self.game_counter += 1
